@@ -5,6 +5,7 @@ Docker Container for PXE Server, Support CentOS, Ubuntu, Freebsd, Debian, CoreOS
 [root@docker ~]# cd pxe && docker build -t ravihuang/pxe .
 
 ##Start container:
+```
 [root@docker ~]# cat /etc/system-release
 CentOS Linux release 7.2.1511 (Core)
 [root@docker ~]# ls /mnt/hgfs/tftpboot/ -l
@@ -26,5 +27,5 @@ drwxrwxrwx 1 root root       4096 Jun  6  2014 ubuntu
 -rwxrwxrwx 1 root root     162860 Jan 15  2013 vesamenu.c32
 
 [root@docker ~]# docker run --name pxe2  --net host -v /mnt/hgfs/tftpboot:/tftpboot -v /mnt/cdrom:/mnt/cdrom -d ravihuang/pxe 192.168.103.11
-
+```
 192.168.103.11 is dhcp listen address
