@@ -9,6 +9,7 @@ if [ $? -eq 1 ]; then
    prefix=${ip%.*}
    sed -i "s/192.168.103.11/$ip/g" /etc/dnsmasq.conf
    sed -i "s/192.168.103/$prefix/g"  /etc/dnsmasq.conf
+   echo "$ip pxe.ravihuang.net" >> /etc/hosts
 fi
 
 echo "Start Services:"
