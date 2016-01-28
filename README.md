@@ -29,3 +29,12 @@ drwxrwxrwx 1 root root       4096 Jun  6  2014 ubuntu
 [root@docker ~]# docker run --name pxe2  --net host -v /mnt/hgfs/tftpboot:/tftpboot -v /mnt/cdrom:/mnt/cdrom -d ravihuang/pxe 192.168.103.11
 ```
 192.168.103.11 is dhcp listen address
+
+##HTTPS CSR
+```
+#cd /etc/nginx/
+#openssl genrsa -des3 -out server.key 1024
+#openssl req -new -key server.key -out server.csr
+#openssl rsa -in server.key -out server_nopwd.key
+#openssl x509 -req -days 365 -in server.csr -signkey server_nopwd.key -out server.crt
+```

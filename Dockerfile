@@ -11,6 +11,10 @@ COPY conf/default.conf /etc/nginx/conf.d/default.conf
 COPY conf/dnsmasq.conf /etc/dnsmasq.conf
 COPY conf/start.sh /start.sh
 
+#for ssl
+COPY conf/server.crt /etc/nginx
+COPY conf/server_nopwd.key /etc/nginx
+
 ONBUILD RUN rm -rf /var/lib/apt/lists/*
 ENTRYPOINT ["/start.sh"]
 CMD ["1.1.1.1"]
