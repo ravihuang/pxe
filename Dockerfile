@@ -1,7 +1,7 @@
 FROM nginx
 MAINTAINER Ravi Huang <ravi.huang@gmail.com>
 
-RUN apt-get -q update && apt-get -qy install dnsmasq wget iptables \
+RUN apt-get -q update && apt-get -qy install dnsmasq wget iptables vim unzip \
     supervisor 
     
 COPY conf/mime.types /etc/nginx/mime.types
