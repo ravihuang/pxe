@@ -28,9 +28,9 @@ drwxrwxrwx 1 root root       4096 Jun  6  2014 ubuntu
 
 [root@docker ~]# docker run --name pxe2  --net host -v /mnt/hgfs/tftpboot:/tftpboot -v /mnt/cdrom:/mnt/cdrom -d ravihuang/pxe 192.168.103.11
 
-For linux£º
+For linux:
 [root@docker ~]# docker run --name pxe_lin  --net host -v /mnt/hgfs/tftpboot:/tftpboot -v /mnt/cdrom:/mnt/cdrom -d ravihuang/pxe 172.16.5.114
-For Windows£º
+For Windows:
 [root@docker ~]# docker run --name pxe_win  --net host -v /mnt/hgfs/tftpboot/winpe:/tftpboot -d ravihuang/pxe 172.16.5.114
 
 172.16.5.114 is dhcp listen address
