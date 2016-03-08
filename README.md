@@ -1,5 +1,5 @@
 # PXE  
-Docker Container for PXE Server, Support CentOS, Ubuntu, Freebsd, Debian, CoreOS, Panabit
+Docker Container for PXE Server, Support CentOS, Ubuntu, Freebsd, Debian, CoreOS, Windows, ......
 
 ##Build Images:
 [root@docker ~]# cd pxe && docker build -t ravihuang/pxe .
@@ -27,8 +27,15 @@ drwxrwxrwx 1 root root       4096 Jun  6  2014 ubuntu
 -rwxrwxrwx 1 root root     162860 Jan 15  2013 vesamenu.c32
 
 [root@docker ~]# docker run --name pxe2  --net host -v /mnt/hgfs/tftpboot:/tftpboot -v /mnt/cdrom:/mnt/cdrom -d ravihuang/pxe 192.168.103.11
+
+For linux£º
+[root@docker ~]# docker run --name pxe_lin  --net host -v /mnt/hgfs/tftpboot:/tftpboot -v /mnt/cdrom:/mnt/cdrom -d ravihuang/pxe 172.16.5.114
+For Windows£º
+[root@docker ~]# docker run --name pxe_win  --net host -v /mnt/hgfs/tftpboot/winpe:/tftpboot -d ravihuang/pxe 172.16.5.114
+
+172.16.5.114 is dhcp listen address
+
 ```
-192.168.103.11 is dhcp listen address
 
 ##HTTPS CSR
 ```
