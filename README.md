@@ -35,6 +35,11 @@ For Windows:
 
 ```
 
+##CoreOS cloud config files
+```
+# curl -O http://172.16.5.114/coreos/config/cloud-config.yml -H 'X-Forwarded-For: 192.168.103.109'  -H 'X-Real-Ip: 172.16.5.109'
+```
+
 ##HTTPS CSR
 ```
 #cd /etc/nginx/
