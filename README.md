@@ -1,10 +1,10 @@
 # PXE  
 Docker Container for PXE Server, Support CentOS, Ubuntu, Freebsd, Debian, CoreOS, Windows, ......
 
-##Build Images:
+## Build Images:
 [root@docker ~]# cd pxe && docker build -t ravihuang/pxe .
 
-##Start container:
+## Start container:
 ```
 [root@docker ~]# cat /etc/system-release
 CentOS Linux release 7.2.1511 (Core)
@@ -35,12 +35,12 @@ For Windows:
 
 ```
 
-##CoreOS cloud config files
+## CoreOS cloud config files
 ```
 # curl -O http://172.16.5.114/coreos/config/cloud-config.yml -H 'X-Forwarded-For: 192.168.103.109'  -H 'X-Real-Ip: 172.16.5.109'
 ```
 
-##HTTPS CSR
+## HTTPS CSR
 ```
 #cd /etc/nginx/
 #openssl genrsa -des3 -out server.key 1024
